@@ -1,0 +1,30 @@
+For all questions and documentation assume I am a junior employee new to cloud infrastructure. Assume I have some technical knowledge but you will be covering these concepts from the ground up
+
+Q & A ()
+1. What is the difference between high availability and fault tolerance? Which is best to strive for?
+  High-availability systems are also lighter to set up as they are built to share resources with the aim of downtime minimization and failure co-management. In contrast, fault tolerance requires more hardware and software investment to detect failures and immediately switch to redundant components and power backups.
+  High availability systems are designed to minimize downtime and avoid loss of service while Fault-tolerant systems are designed to go beyond high availability and ensure robust business continuity and, in some applications, even assist in disaster recovery.
+  Highly available system that is not necessarily fault-tolerant would leverage a load balancer. Such a setup would allow for minimal downtime in service but lack total redundancy in case of failure.
+  Fault-tolerant systems can be more expensive than high availability. This is because fault-tolerant systems demand the continuous operation and maintenance of redundant system components.
+2. Explain the difference between autoscaling and elasticity. What is vertical and horizontal autoscaling? Is one better? Are they feasible on prem?
+3. Explain what the difference between managed and unmanaged instance groups is.
+4. Explain what the difference between managed and unmanaged instance groups is.
+5. Explain in a few sentences what the 3 tier architecture is and how it relates to what you are learning.
+
+Runbook (what do I, as an engineer, need to have ready to make this happen?)
+1. Goal: a fully configured managed instance group created via Clickops
+2. Explain how to enable autoscaling and autohealing
+3. Explain how to verify that the instance group will manage instances across multiple zones
+4. Explain any other critical config explicitly
+
+Terraform (mandatory requirments)
+1. Explain the mandatory (required) arguments for a VM in terraform
+2. Explain how to output the internal and external IP addresses of the provisioned VM and how you figured this out
+3. Choose 2 non-required arguments and give an explanation for both (do not copy and paste the reference material) 
+
+  attached_disk {
+    source      = google_compute_disk.vm_instances_bacfkend_template_group.self_link
+    device_name = "grafana-disk"
+    
+4. Explain how you would figure out the correct format for creating a VM with the “centOS stream 10” image (the specific image is up to you).
+5. Explain the difference between the “name” argument and the computed “id” and “self_link” attributes
