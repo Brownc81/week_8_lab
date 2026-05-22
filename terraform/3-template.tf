@@ -73,8 +73,11 @@ resource "google_compute_firewall" "north_camp_fw" {
     ports    = ["80"]
   }
 
-  target_tags   = ["grafana"]
-  source_ranges = ["0.0.0.0/0"]  
+  # target_tags   = ["grafana"]
+  # source_ranges = ["0.0.0.0/0"]  
+
+  target_tags   = ["http-server"]
+  source_ranges = ["130.211.0.0/22", "35.191.0.0/16"]
   
 }
 
